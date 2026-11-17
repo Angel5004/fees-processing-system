@@ -1,0 +1,48 @@
+{% extends './base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+   <h1>Add Academic Session</h1>
+   <div class = "container">
+    <form method = "POST">
+        {% csrf_token %} 
+        {{form|crispy}}
+        <input type = "submit">
+    </form>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+    <table class="table table-striped">
+            <thead>
+                <tr>
+                <th scope="col">year</th>
+                <th scope="col">term</th>
+                <th scope="col">beginning_date</th>
+                <th scope="col">ending_date</th>
+                <th scope="col">status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for academic_session in academic_sessions %}
+                <tr>
+                    <td scope="row">{{ academic_session.year }}</td>
+                    <td>{{ academic_session.term }}</td>
+                    <td>{{ academic_session.beginning_date }}</td>
+                    <td>{{ academic_session.ending_date }}</td>
+                    <td>{{academic_session.status}}</td>
+
+                    <td>
+                        <a href = "{% url 'edit_academic_session_page' academic_session.id %}">Edit</a>
+                        <a href = "{% url 'delete_academic_session_page' academic_session.id %}"
+                        onclick = "return confirm('Are you sure you want to delete?')">
+                        Delete
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href = "{% url 'index_page'%}">Home</a>    
+    </div>
+
+{% endblock content %}

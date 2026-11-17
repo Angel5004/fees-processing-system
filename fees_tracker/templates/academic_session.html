@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Session</title>
+
+     <link rel="stylesheet" href = "style.css">
+     <script src="js/script.js" defer></script>
+
+</head>
+<body>
+
+    <div id = "main-content">
+        <div id = "heading">
+           <h1>ACADEMIC SESSION</h1> 
+        </div>
+    
+    <h2>Register an academic session</h2>
+    <p>
+        Add a new term with its billing window and status.
+    </p>
+   
+    <form action = "">
+        <P><input type = "number" class = "input-control" id = "" placeholder = "ACADEMIC_SESSION ID"></p>
+        <p><input type = "number" class = "input-control" id = "" placeholder = "YEAR"></p>
+        <p><input type = "number" class = "input-control" id = "" placeholder = "TERM"></p>
+        <p><input type = "number" class = "input-control" id = "" placeholder = "BEGINNING DATE"></p>
+        <p><input type = "number" class = "input-control" id = "" placeholder = "ENDING DATE"></p>
+        <p><input type = "status" class = "input-control" id = "" placeholder = "STATUS"></p> 
+        <button id = "btn-submit">SAVE RECORD</button>     <button id= "btn-submit">CLEAR FORM</button>
+    </form>
+
+    <a href="{% url 'index_page'%} ">Back Home</a>
+</body>
+</html>

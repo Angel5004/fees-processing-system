@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments</title>
+
+</head>
+<body>
+
+    <div id = "main-content">
+        <div id = "heading">
+           <h1>PAYMENTS</h1> 
+        </div>
+    
+   <h2>Record a payment</h2>
+    <p>
+        Every payment a parent or guardian makes against a pupil's bill is in either cash or mobile money.
+    </p>
+
+    
+    <form action = "">
+        <p><input type = "number" class = "input-control" id = "" placeholder = "PAYMENT ID"></p>
+        <p><input type = "number" class = "input-control" id = "" placeholder = "PUPIL BILL ID"></p>
+        <p><input type = "number" class = "input-control" id = "" placeholder = "PUPIL ID"></p>
+        <p><input type = "date" class = "input-control" id = "" placeholder = "PAYMENT DATE"></p>
+        <p><input type = "number" class = "input-control" id = "" placeholder = "AMOUNT PAID"></p>
+        <p><input type = "text" class = "input-control" id = "" placeholder = "PAYMENT METHOD"></p>
+        <p><input type = "text" class = "input-control" id = "" placeholder = "RECEIVED BY"></p>
+        <button id= "btn-submit">SAVE RECORD</button>     <button id= "btn-submit">CLEAR FORM</button>
+    </form> 
+
+    <a href="{% url 'index_page'%} ">Back Home</a>
+</body>
+</html>    

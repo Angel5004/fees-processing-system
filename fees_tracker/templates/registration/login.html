@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block guest_content %}
+
+<div class="card shadow">
+
+    <div class="card-header text-center">
+        <h3>Fees Processing System</h3>
+        <p>Please Login to Continue</p>
+    </div>
+
+    <div class="card-body">
+
+        <form method="POST">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit" class="btn btn-primary w-100">
+                Login
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock guest_content %}

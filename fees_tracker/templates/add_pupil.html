@@ -1,0 +1,50 @@
+{% extends './base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h1>Add Pupil</h1>
+        <form method = "POST">
+            {% csrf_token %} 
+            {{form|crispy}}
+            <input type = "submit" class = "btn btn-primary">
+        </form>
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                <th scope="col">first_name</th>
+                <th scope="col">last_name</th>
+                <th scope="col">class</th>
+                <th scope="col">birth_date</th>
+                <th scope="col">Address</th>
+                <th scope="col">parent</th>
+                <th scope="col">contact</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pupil in pupils %}
+                <tr>
+                    <td scope="row">{{ pupil.first_name }}</td>
+                    <td>{{ pupil.last_name }}</td>
+                    <td>{{ pupil.class }}</td>
+                    <td>{{ pupil.birth_date }}</td>
+                    <td>{{ pupil.address }}</td>
+                    <td>{{ pupil.parent }}</td>
+                    <td>{{ pupil.contact }}</td>
+                    <td>
+                        <a href = "{% url 'edit_pupil_page' pupil.id %}">Edit</a>
+                        <a href = "{% url 'delete_pupil_page' pupil.id %}"
+                        onclick = "return confirm('Are you sure you want to delete?')">
+                        Delete
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href = "{% url 'index_page'%}">Home</a>     
+    
+{% endblock content %}
